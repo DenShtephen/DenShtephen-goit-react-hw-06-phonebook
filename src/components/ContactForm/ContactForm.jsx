@@ -17,7 +17,7 @@ export const ContactForm = () => {
     const id = nanoid();
     const newContact = { id, name, number };
 
-    addUserContact(newContact, dispatch);
+    addUserContact(newContact);
 
     setName('');
     setNumber('');
@@ -38,7 +38,7 @@ export const ContactForm = () => {
     }
   };
 
-  const addUserContact = (newContact, dispatch) => {
+  const addUserContact = newContact => {
     const nameExists = contacts.some(
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     );
